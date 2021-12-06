@@ -17,6 +17,6 @@ class Contestant(Game):
         random.shuffle(self.name)
         return {'AFC:':self.name[0], 'NFC:':self.name[1]}
 
-my_team = Contestant(contestants).retrieve_team()
-for team, name in my_team.items():
+retrieved_teams = Contestant(contestants).retrieve_team()
+for team, name in retrieved_teams.items():
     print(team, name)
