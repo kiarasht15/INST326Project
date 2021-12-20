@@ -30,6 +30,9 @@ def main(player1, player2):
     """
     roster1 = roster_file(txt1)
     roster2 = roster_file(txt2)
+    
+    p1 = find_roster(player1, roster1)
+    p2 = find_roster(player2, roster2)
  
 
 
