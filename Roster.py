@@ -98,6 +98,6 @@ def find_roster(chosen_name, team_roster):
         """
         for team_names in team_roster:
             if chosen_name in team_names:
-                print(f"Team Name : {chosen_name} & members: {team_roster[chosen_name]}")
+                return team_roster[chosen_name]
             else:
                 raise ValueError(" ")
