@@ -1,5 +1,3 @@
-import argparse
-import sys
 
 """ Make a class and instance of that class; open the team's player roster as 
 text file and find one of team roster thorugh the text file then return list of the roster"""
@@ -25,50 +23,81 @@ https://www.patriots.com/team/players-roster/, https://www.newyorkjets.com/team/
 https://www.steelers.com/team/players-roster/, https://www.tennesseetitans.com/team/players-roster/ 
 """ 
 
-class Roster:
+class Regex:
     """open the team's player roster as text file and find one of team roster thorugh the text file
     then return list of the roster
     Attributes:
-        roster (dictionary) : a dictionary for the team's player roster
-        file (txt) : text file for the team's player roster
+        team (str) : team name
     """
     
-    def __init__(self, file):
+    def __init__(self, team):
         """Initialize attribute for creating file and read the file
         Args:
-            file (txt) : text file for the team's player roster
+            team (str) : team name
+        """     
+        self.team = team
+
+    def match_regex(self):
+        """match regex with team name
+        Raises:
+            ValueError : if regular expression fails, 
+            indicate that the team name string could not be parsed
         """
-        self.roster = dict()      
-        self.file = file
-    
-    def roster_file(self, teams):
-        """read text file and return list of team roster 
+        pattern = r"""(?xs)
+                    ^
+                    (?P<cg_fline>[A-Za-z]{3,15})
+                    (\s)?(?P<ct_sline>[A-Za-z]{3,9})
+                    (\s)?(?P<cg_tline>(\w{3,13})?)
+                    $"""
+        
+        
+        match = re.search(pattern, self.team)
+        
+        if match:
+            self.team = match.group()
+            return (self.team)
+        else:
+            raise ValueError("The team name string could not be parsed!")
+            
+
+    def __repr__(self):
+        """present the team name"""
+        
+        return (f"{self.team!r}")
+
+
+
+
+def roster_file(file):
+    """read text file and return list of team roster 
+        
+    Returns:
+        (dictionary) : a dictionary of tema roster with each team name
+    """
+    with open(file, "r", encoding="utf-8") as f: 
+        roster = dict() 
+        for line in f:
+            lines = line.strip().split(': ')
+            roster[Regex(lines[0])] = lines[1].split(', ')
+            result = roster        
+        print(result) 
+
+
+
+
+def find_roster(chosen_name, team_roster):
+        """find roster which match the regular expression with the teamname
         Args:
-            teams (txt) : a text file of the teams' player roster
-        Returns:
-            (dictionary) : a dictionary of tema roster with each team name
-        """
-        with open(teams.file, "r", encoding="utf-8") as f: 
-            self.roster 
-            for line in f:
-                lines = line.strip().split(': ')
-                self.roster[lines[0]] = lines[1].split(', ')
-                result = self.roster
-            return result
-    
-    def find_roster(self, teamname):
-        """find roster which match with the teamname
-        Args:
-            teamname (str) : a team name 
+            chosen_name (str) : chosen team name 
+            team_roster (dict) : dictionary of teams' roster
         Returns:
             (str) :  show a string with team name and its roster from 
-            list of the roster"""
-        roster_dict = self.roster
-        for names in roster_dict:
-            if teamname in names:
-                return names[teamname]
-                
-        
-        
-       
-
+            list of the roster
+        Raises:
+            ValueError : if chosen team name is not in the team roster
+        """
+        for team_names in team_roster:
+            if chosen_name in team_names:
+                print(f"Team Name : {chosen_name} & members: {team_roster[chosen_name]}")
+            else:
+                raise ValueError(" ")
