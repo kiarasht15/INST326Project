@@ -18,12 +18,17 @@ def increase_skill(team_name):
     elif number == 2:
         team_name.increase_throwing_skill()
 
-def main(player1,player2):
-    x = Roster(txt1)
-    y = Roster(txt2)
+def main(player1, player2):
+    """Play football game
+    Args:
+        player1 (str) : player1 team name
+        player2 (str) : player2 team name
+    Side Effects:
+        (str) : Indicate which team is winner with its score
+    """
+    roster1 = roster_file(txt1)
+    roster2 = roster_file(txt2)
     
-    player1 = x.roster_file()
-    player2 = y.roster_file()
     
     
     
