@@ -2,6 +2,12 @@ import Team
 import Roster
 import sys
 import random
+import csv
+
+
+
+txt1 = "roster_afc_team.txt"
+txt2 = "roster_nfc_team.txt"
 
 
 def increase_skill(team_name):
