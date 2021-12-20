@@ -19,8 +19,11 @@ def increase_skill(team_name):
         team_name.increase_throwing_skill()
 
 def main(player1,player2):
-    player1 = 
-    player2 = 
+    x = Roster(txt1)
+    y = Roster(txt2)
+    
+    player1 = x.roster_file()
+    player2 = y.roster_file()
     
     
     
