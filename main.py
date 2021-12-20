@@ -3,6 +3,8 @@ import Roster
 import sys
 import random
 import csv
+import re
+import argparse
 
 
 
@@ -28,8 +30,26 @@ def main(player1, player2):
     """
     roster1 = roster_file(txt1)
     roster2 = roster_file(txt2)
+ 
+
+
+
     
-    
-    
+def parse_args(arglist):
+    """ Parse command-line arguments.
+    Args:
+        arglist (list of str): command-line arguments.
+    Returns:
+        namespace: an object with one attribute, file, containing a string.
+    """
+    parser = argparse.ArgumentParser()
+    parser.add_argument("filename", help="file containing roster")
+    args = parser.parse_args(arglist)
+    return args
+
+       
+if __name__ == "__main__":
+    args = parse_args(sys.argv[1:])
+    main(args.filename)  
     
     
