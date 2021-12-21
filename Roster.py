@@ -78,7 +78,7 @@ def roster_file(file):
         roster = dict() 
         for line in f:
             lines = line.strip().split(': ')
-            roster[Regex(lines[0])] = lines[1].split(', ')
+            roster[lines[0]] = lines[1].split(', ')
             result = roster        
         return result 
 
@@ -91,13 +91,11 @@ def find_roster(chosen_name, team_roster):
             chosen_name (str) : chosen team name 
             team_roster (dict) : dictionary of teams' roster
         Returns:
-            (str) :  show a string with team name and its roster from 
-            list of the roster
+            (list) :  show a list with the roster based on the team name
         Raises:
             ValueError : if chosen team name is not in the team roster
         """
-        for team_names in team_roster:
             if chosen_name in team_names:
                 return team_roster[chosen_name]
-            else:
+            if not chosen_name in team_roster:
                 raise ValueError(" ")
