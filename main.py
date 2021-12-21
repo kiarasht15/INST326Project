@@ -1,4 +1,4 @@
-from team import *
+from skills import *
 from roster import *
 from footballteams import *
 import sys
