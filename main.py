@@ -50,8 +50,17 @@ def main(player1, player2):
     user_choice = input("Would you want to start season for your football game or 'no'?: ")
     if user_choice == "no"
          print("End")
+         Contestant(teams, contestants)
+                 retrieved_teams = Contestant(contestants).retrieve_team()
+         for team, name in retrieved_teams.items():
+             print(team, name)
+         value = input("Please choose a team from the two options above\n")
+         if value == name:
+             print(f"You entered {name}")
+         else:
+             print("Sorry that is not an option")
     p1 = random.choice(teams)
-    prinnt(p1)
+    print(p1)
     p2 = random.choice(contestants)
     print(p2)
     r1 = find_roster(choose_team1, roster1)
