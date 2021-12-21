@@ -8,18 +8,8 @@ contestants = ["Baltimore Ravens", "Buffalo Bills", "Cincinnati Bengals", "Cleve
                "Kansas City Chiefs", "Las Vegas Raiders", "Los Angeles Chargers", "Miami Dolphins",
                "New England Patriots", "New York Jets", "Pittsburgh Steelers", "Tennessee Titans"]
 
-class Game:
-    """ This class is used to initiate the name object that is later used in the code.
-
-    Attributes: 
-      name : This attribute was used to create the name variable. 
-
-    Returns: 
-      Makes a new instance of the name variable.  
-    
-    """
    
-class Contestant(Game):
+class Contestant:
     """This class pulls two random teams from each of the lists (teams and contestants). 
     
     Attributes: 
