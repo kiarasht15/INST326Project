@@ -31,7 +31,7 @@ def increase_skill(team_name):
     elif number == 2:
         return Team.increase_throwing_skill(team_name)
 
-def main(player):
+def main(player1, player2):
     """Play football game
     Args:
         player1 (str) : player1 team name
@@ -42,15 +42,31 @@ def main(player):
     roster1 = roster_file(txt1)
     roster2 = roster_file(txt2)
  
-    p1 = find_roster(player1, roster1)
-    p2 = find_roster(player2, roster2)
     
-    for i in range(18):
-        
-        user_choice = input("Would you want to start season for your football game or 'no'?: ")
-        if user_choice == "no":
-            break
-            print(" ")
+    
+    
+ 
+    user_choice = input("Would you want to start season for your football game or 'no'?: ")
+    if user_choice == "no"
+         print("End")
+    p1 = random.choice(teams)
+    prinnt(p1)
+    p2 = random.choice(contestants)
+    print(p2)
+    r1 = find_roster(choose_team1, roster1)
+    r2 = find_roster(choose_team2, roster2)
+    team1 = Team(choose_team1, 0, 0, random.randint(1, 5), r1)
+    team2 = Team(chhose_team2, 0, 0, random.randint(1, 5), r2)
+    
+    question = input("Which team do you want to play?: ")
+         if question == "p1":
+                  print(r1)
+                  print(team1)
+         if question == "p2":
+                  print(r2)
+                  print(team2)
+    
+    
 
 
 
