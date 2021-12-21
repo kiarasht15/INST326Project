@@ -18,9 +18,7 @@ class Game:
       Makes a new instance of the name variable.  
     
     """
-    def __init__(self, name):
-        self.name = name
-
+   
 class Contestant(Game):
     """This class pulls two random teams from each of the lists (teams and contestants). 
     
@@ -33,6 +31,10 @@ class Contestant(Game):
     Returns: 
         This code returns a team from the AFC list and the NFC list. 
     """
+
+    def __init__(self, name):
+         self.name = name
+
     def retrieve_team(self):
         random.shuffle(self.name)
         return {'AFC:':self.name[0], 'NFC:':self.name[1]}
