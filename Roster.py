@@ -1,5 +1,5 @@
 import re
-""" Make a class and instance of that class; open the team's player roster as 
+"""  open the team's player roster with 
 text file and find one of team roster thorugh the text file then return list of the roster"""
 
 """reference for roster_team: 
