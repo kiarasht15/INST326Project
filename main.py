@@ -70,3 +70,14 @@ if __name__ == "__main__":
     main(args.filename)  
     
     
+def find_score(graph, start, end, path=[]):
+    score = path + [start]
+    if start == end:
+        return path
+    for node in graph[start]:
+        if node not in path:
+            newpath = find_score(graph, node, end, path)
+            if newpath:
+                return newpath
+            
+print(find_score(graph, 'd', 'c'))
