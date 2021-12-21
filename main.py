@@ -1,5 +1,5 @@
 import Team
-From Roster import * 
+from Roster import * 
 import Game
 import Contestant
 import sys
