@@ -18,9 +18,9 @@ def increase_skill(team_name):
     number = input("Enter 1 to increase running skill or enter 2 to increase throwing skill")
     
     if number == 1:
-        return increase_running_skill(team_name)
+        return Team.increase_running_skill(team_name)
     elif number == 2:
-        return increase_throwing_skill(team_name)
+        return Team.increase_throwing_skill(team_name)
 
 def main(player1, player2):
     """Play football game
