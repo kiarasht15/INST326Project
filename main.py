@@ -11,6 +11,7 @@ import argparse
 
 txt1 = "roster_afc_team.txt"
 txt2 = "roster_nfc_team.txt"
+user_choice = ""
 
 
 def increase_skill(team_name):
@@ -34,6 +35,9 @@ def main(player1, player2):
  
     p1 = find_roster(player1, roster1)
     p2 = find_roster(player2, roster2)
+    
+    while (user_choice != "no"):
+        user_choice = input("Would you want to start season for your football game or 'no'?: ")
  
 
 
