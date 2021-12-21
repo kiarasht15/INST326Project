@@ -1,6 +1,4 @@
-import Team
-from Roster import * 
-import Game
+from Team, Roster, Game, Contestant import *
 import Contestant
 import sys
 import random
