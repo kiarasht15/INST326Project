@@ -58,13 +58,22 @@ def main(player1, player2):
     team1 = Team(choose_team1, 0, 0, random.randint(1, 5), r1)
     team2 = Team(chhose_team2, 0, 0, random.randint(1, 5), r2)
     
-    question = input("Which team do you want to play?: ")
-         if question == "p1":
+    question = input("Which team do you want to play? Enter 1 for team 1 and 2 for team 2: ")
+         if question == 1:
                   print(r1)
-                  print(team1)
-         if question == "p2":
+                  print("Running Skill = " + team1.combined_running_skill)
+                  print("Throwing Skill = " + team1.combined_throwing_skill)
+                  print("Skill Tokens = " + team1.skill_token)
+                  
+                  increase_skill(team1)
+         
+         if question == 2:
                   print(r2)
-                  print(team2)
+                  print("Running Skill = " + team2.combined_running_skill)
+                  print("Throwing Skill = " + team2.combined_throwing_skill)
+                  print("Skill Tokens = " + team2.skill_token)
+                  
+                  increase_skill(team2)
     
     
 
