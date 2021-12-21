@@ -80,7 +80,7 @@ def roster_file(file):
             lines = line.strip().split(': ')
             roster[Regex(lines[0])] = lines[1].split(', ')
             result = roster        
-        print(result) 
+        return result 
 
 
 
