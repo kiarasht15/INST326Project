@@ -1,7 +1,6 @@
 from team import *
 from roster import *
-from game import *
-from contestant import *
+from footballteams import *
 import sys
 import random
 import csv
