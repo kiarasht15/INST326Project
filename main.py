@@ -11,6 +11,16 @@ import argparse
 
 txt1 = "roster_afc_team.txt"
 txt2 = "roster_nfc_team.txt"
+
+teams = ["Arizona Cardinals", "Atlanta Falcons", "Carolina Panthers", "Dallas Cowboys",
+         "Chicago Bears", "Detroit Lions", "Green Bay Packers", "New York Giants",
+         "Los Angeles Rams", "Minnesota Vikings", "New Orleans Saints", "Philadelphia Eagles",
+         "San Francisco 49ers", "Seattle Seahawks", "Tampa Bay Buccaneers", "Washington Football Team"]
+contestants = ["Baltimore Ravens", "Buffalo Bills", "Cincinnati Bengals", "Cleveland Browns",
+               "Denver Broncos", "Houston Texans", "Indianapolis Colts", "Jacksonville Jaguars",
+               "Kansas City Chiefs", "Las Vegas Raiders", "Los Angeles Chargers", "Miami Dolphins",
+               "New England Patriots", "New York Jets", "Pittsburgh Steelers", "Tennessee Titans"]
+
 user_choice = ""
 
 
