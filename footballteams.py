@@ -13,21 +13,18 @@ class Contestant:
     """This class pulls two random teams from each of the lists (teams and contestants). 
     
     Attributes: 
-      random.shuffle : Used this global function to randomly shuffle between the two lists. 
-      retrieved_teams (str ): Set this variable to output the team names that were retrieved. 
-      team (str) : variable used for updating the team to output the league that the teams were from (NFC and AFC). 
       name (str) : variable used for updating the name to output the retrieved teams from above. 
         
     Returns: 
-        This code returns a team from the AFC list and the NFC list. 
+        (str) : a team from the list of teams. 
     """
 
     def __init__(self, name):
          self.name = name
 
     def retrieve_team(self):
-        random_team = random.shuffle(self.name)
-        return random_team[0]
+        random_team = random.choice(self.name)
+        return random_team
         
   
 
