@@ -55,14 +55,14 @@ if user_choice == "yes":
     print(p1)
     print(p2)   
     question = input("Which team do you want to play as? Enter 1 for team 1 and 2 for team 2: ")
-    if question == 1:
+    if question == "1":
         print(r1)
         print("Running Skill = " + str(Team.get_running_skill(team1)))
         print("Throwing Skill = " + str(Team.get_throwing_skill(team1)))
         print("Skill Tokens = " + str(Team.get_skill_token(team1)))
                     
         increase_skill(team1)
-    if question == 2:
+    if question == "2":
         print(r2)
         print("Running Skill = " + str(Team.get_running_skill(team2)))
         print("Throwing Skill = " + str(Team.get_throwing_skill(team2)))
