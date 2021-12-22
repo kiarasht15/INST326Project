@@ -21,8 +21,7 @@ contestants = ["Baltimore Ravens", "Buffalo Bills", "Cincinnati Bengals", "Cleve
                "New England Patriots", "New York Jets", "Pittsburgh Steelers", "Tennessee Titans"]
 
 user_choice = ""
-team1_score = []
-team2_score = []
+
 
 
 def increase_skill(team_name):
