@@ -26,16 +26,8 @@ class Contestant:
          self.name = name
 
     def retrieve_team(self):
-        random.shuffle(self.name)
-        return {'AFC:':self.name[0], 'NFC:':self.name[1]}
+        random_team = random.shuffle(self.name)
+        return random_team[0]
         
-    print(f"Which team would you like to choose?")
-retrieved_teams1 = Contestant(contestants).retrieve_team()
-retrieved_teams2 = Contestant(teams).retrieve_team()
-for team, name in retrieved_teams.items():
-    print(team, name)
-value = input("Please choose a team from the two options above\n")
-if value == name:
-    print(f"You entered {name}")
-else:
-    print("Sorry that is not an option")
+  
+
