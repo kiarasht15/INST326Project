@@ -17,7 +17,7 @@ def cal_score(even, odd):
         return result
     if odd > 1:
         touchdown += 0 
-         result = even + odd + touchdown
+        result = even + odd + touchdown
         return result
     
 
