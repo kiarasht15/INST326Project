@@ -43,7 +43,7 @@ def main():
     roster2 = roster_file(txt2)
 
     user_choice = input("Would you want to start season for your football game or 'no'?: ")
-    if user_choice == "no"
+    if user_choice == "no":
          print("End")
          
     p1 = Contestant(teams).retrieve_team()
