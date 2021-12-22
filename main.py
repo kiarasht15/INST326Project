@@ -4,12 +4,11 @@ from footballteams import *
 from score import *
 import sys
 import random
-import csv
 import re
-import argparse
 
-txt1 = "roster_afc_team.txt"
-txt2 = "roster_nfc_team.txt"
+
+txt1 = "roster_nfc_team.txt"
+txt2 = "roster_afc_team.txt"
 
 teams = ["Arizona Cardinals", "Atlanta Falcons", "Carolina Panthers", "Dallas Cowboys",
          "Chicago Bears", "Detroit Lions", "Green Bay Packers", "New York Giants",
@@ -34,42 +33,44 @@ def increase_skill(team_name):
 
 
 
-def main():
-    """Play football game
-    Side Effects:
-        (str) : Indicate which team is winner with its score
-    """
-    roster1 = roster_file(txt1)
-    roster2 = roster_file(txt2)
 
-    user_choice = input("Would you want to start season for your football game or 'no'?: ")
-    if user_choice == "no":
-         print("End")
-         
-    p1 = Contestant(teams).retrieve_team()
+#read the team roster file
+roster1 = roster_file(txt1)
+roster2 = roster_file(txt2)
+
+
+
+user_choice = input("Would you want to start season for your football game or 'no'?: ")
+if user_choice == "no":
+    print("End")
+p1 = Contestant(teams).retrieve_team()
+p2 = Contestant(contestants).retrieve_team()   
+r1 = find_roster(str(p1), roster1)
+r2 = find_roster(str(p2), roster2)
+team1 = Team(p1, 0, 0, random.randint(1, 5), r1)
+team2 = Team(p2, 0, 0, random.randint(1, 5), r2) 
+Regex(p1)
+Regex(p2)
+if user_choice == "yes":
     print(p1)
-    p2 = Contestant(contestants).retrieve_team()
-    print(p2)
-    r1 = find_roster(p1, roster1)
-    r2 = find_roster(p2, roster2)
-    team1 = Team(p1, 0, 0, random.randint(1, 5), r1)
-    team2 = Team(p2, 0, 0, random.randint(1, 5), r2)
-    
-    question = input("Which team do you want to play? Enter 1 for team 1 and 2 for team 2: ")
+    print(p2)   
+    question = input("Which team do you want to play as? Enter 1 for team 1 and 2 for team 2: ")
     if question == 1:
-            print(r1)
-            print("Running Skill = " + team1.combined_running_skill)
-            print("Throwing Skill = " + team1.combined_throwing_skill)
-            print("Skill Tokens = " + team1.skill_token)
-                  
-            increase_skill(team1)
+        print(r1)
+        print("Running Skill = " + team1.combined_running_skill())
+        print("Throwing Skill = " + team1.combined_throwing_skill())
+        print("Skill Tokens = " + team1.skill_token())
+                    
+        increase_skill(team1)
     if question == 2:
-            print(r2)
-            print("Running Skill = " + team2.combined_running_skill)
-            print("Throwing Skill = " + team2.combined_throwing_skill)
-            print("Skill Tokens = " + team2.skill_token)
-                  
-            increase_skill(team2)
+        print(r2)
+        print("Running Skill = " + team2.combined_running_skill())
+        print("Throwing Skill = " + team2.combined_throwing_skill())
+        print("Skill Tokens = " + team2.skill_token())
+                    
+        increase_skill(team2)
+        
+ #calculate score and show who is winner with the score       
     for i in range(18):
         team1_odd = odd()
         team1_even = even()
@@ -82,7 +83,8 @@ def main():
     elif score1 == score2:
         print(f"there is no winner at this time -- tie -------")
     elif score1 < score2:
-        print(f"team2 is winner with score {score2}!")
+        print(f"team2 is winner with score {score2}!") 
+
          
         
     
