@@ -90,7 +90,7 @@ def main():
     elif score1 == score2:
         print(f"there is no winner at this time -- tie -------")
     elif score1 < score2:
-        print(f"team2 is winner with score {tscore2}!")
+        print(f"team2 is winner with score {score2}!")
          
         
     
