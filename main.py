@@ -32,8 +32,6 @@ def increase_skill(team_name):
     elif number == 2:
         return Team.increase_throwing_skill(team_name)
 
-def add_score(team, score):
-         team.append(score)
 
 
 def main():
