@@ -1,6 +1,7 @@
 from skills import *
 from roster import *
 from footballteams import *
+from score import *
 import sys
 import random
 import csv
@@ -22,6 +23,8 @@ contestants = ["Baltimore Ravens", "Buffalo Bills", "Cincinnati Bengals", "Cleve
                "New England Patriots", "New York Jets", "Pittsburgh Steelers", "Tennessee Titans"]
 
 user_choice = ""
+team1_score = []
+team2_score = []
 
 
 def increase_skill(team_name):
@@ -32,7 +35,11 @@ def increase_skill(team_name):
     elif number == 2:
         return Team.increase_throwing_skill(team_name)
 
-def main(player1, player2):
+def add_score(team, score):
+         team.append(score)
+
+
+def main():
     """Play football game
     Args:
         player1 (str) : player1 team name
@@ -42,32 +49,19 @@ def main(player1, player2):
     """
     roster1 = roster_file(txt1)
     roster2 = roster_file(txt2)
- 
-    
-    
-    
- 
+
     user_choice = input("Would you want to start season for your football game or 'no'?: ")
     if user_choice == "no"
          print("End")
          
-    retrieved_teams1 = Contestant(contestants).retrieve_team()
-    retrieved_teams2 = Contestant(teams).retrieve_team()
-    for team, name in retrieved_teams.items():
-          print(team, name)
-    value = input("Please choose a team from the two options above\n")
-         if value == name:
-             print(f"You entered {name}")
-         else:
-             print("Sorry that is not an option")
-    p1 = random.choice(teams)
+    p1 = Contestant(teams).retrieve_team()
     print(p1)
-    p2 = random.choice(contestants)
+    p2 = Contestant(contestants).retrieve_team()
     print(p2)
-    r1 = find_roster(choose_team1, roster1)
-    r2 = find_roster(choose_team2, roster2)
-    team1 = Team(choose_team1, 0, 0, random.randint(1, 5), r1)
-    team2 = Team(chhose_team2, 0, 0, random.randint(1, 5), r2)
+    r1 = find_roster(p1, roster1)
+    r2 = find_roster(p2, roster2)
+    team1 = Team(p1, 0, 0, random.randint(1, 5), r1)
+    team2 = Team(p2, 0, 0, random.randint(1, 5), r2)
     
     question = input("Which team do you want to play? Enter 1 for team 1 and 2 for team 2: ")
     if question == 1:
@@ -84,7 +78,21 @@ def main(player1, player2):
             print("Skill Tokens = " + team2.skill_token)
                   
             increase_skill(team2)
-    
+    for i in range(18):
+        team1_odd = odd()
+        team1_even = even()
+        team2_odd = odd()
+        team2_even = even()
+        score1 = cal_score(team1_even, team1_odd)
+        score2 = cal_score(team2_even, team2_odd)
+    if score1 > score2:
+        print(f"team1 is winner with score {score1}!")
+    elif score1 == score2:
+        print(f"there is no winner at this time -- tie -------")
+    elif score1 < score2:
+        print(f"team2 is winner with score {tscore2}!")
+         
+        
     
         
 
