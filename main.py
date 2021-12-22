@@ -36,9 +36,6 @@ def increase_skill(team_name):
 
 def main():
     """Play football game
-    Args:
-        player1 (str) : player1 team name
-        player2 (str) : player2 team name
     Side Effects:
         (str) : Indicate which team is winner with its score
     """
