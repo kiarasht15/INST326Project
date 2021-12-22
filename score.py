@@ -17,7 +17,8 @@ def cal_score(even, odd):
         even (int) : even score by randomly choosing 1 to 3
         odd (int) : odd score by randomly choosing 1 to 3
     Returns:
-        (int) : the result by calculating even, odd, and touchdown"""
+        (int) : the result by calculating even, odd, and touchdown
+    """
     touchdown = 0
     if even > 1:
         touchdown += 3
