@@ -3,34 +3,15 @@ import random
 
 
 def even():
-    """random choose from 1 to 10 for even"""
-    while check is True
-        check = False
-        even = random.randint(1,10)
-        if even % 2 == 0:
-            return even
-        else:
-            check = False
+    """random choose from 1 to 3 for even"""
+    even = random.randint(1,3)
+    return even
 def odd():
-    """random choose from 1 to 11 for odd"""
-    while check is True
-        check = False
-        odd = random.randint(1,11)
-        if odd % 2 != 0:
-            return odd
-        else:
-            check = False
+    """random choose from 1 to 3 for odd"""
+    odd = random.randint(1,3)
+    return odd
 
-def compare():
-    even = even()
-    odd = odd()
-    
-    if even > odd:
-        return 8
-    elif even < odd:
-        return 3
-
-def cal_score():
+def cal_score(even, odd):
     """calculate the total score 
     Args:
         even (int) : even score by randomly choosing 1 to 3
@@ -38,19 +19,15 @@ def cal_score():
     Returns:
         (int) : the result by calculating even, odd, and touchdown
     """
-    touchdown_team = 0
-    counter = 0
-    
-    While counter < 5:
-        score_team = compare()
-        
-        touchdown_team = touchdown_team + score_team
-        
-        counter = counter + 1
-        
-    
-    return touchdown_team
-    
+    touchdown = 0
+    if even > 1:
+        touchdown += 3
+        result = even + odd + touchdown
+        return result
+    if odd > 1:
+        touchdown += 0 
+        result = even + odd + touchdown
+        return result
 
     
     
