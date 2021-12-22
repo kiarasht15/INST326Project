@@ -43,3 +43,9 @@ class Team:
           combined_running_skill = self.combined_running_skill + increase
         else:
           combined_running_skill = self.combined_running_skill + 5
+     
+    def get_running_skill(self):
+        return self.combined_running_skill
+    
+    def get_throwing_skill(self):
+        return self.combined_throwing_skill
