@@ -1,27 +1,59 @@
-"""Read.ipynb
-
-
-Original file is located at
-    https://colab.research.google.com/drive/1k_2RkOkROk1dlMv0oNYGI36cDDIhd5O0
-"""
-
 import sklearn
 
 class File:
-  '''Class to set up a file object'''
+
+  """Class file have two methods, one for reading the file and printing it,
+  other for closing the file"""
+
   def __init__(self, fileName):
     information = open(fileName, "r")
     print(information.read()) 
 
   def closeFile(self, fileName):
-    '''Class to close the file'''
-    information.close() 
+    information.close()
 
-#Running Main code and creating an object
-name = 'Plays.txt'
-information = File(name)
-information.closeFile
 
-#Docstrings
-print(File.__doc__)
-print(information.closeFile.__doc__)
+class Players:
+
+  """Class players has two methods, one for reading the file and other for
+  adding players to the file"""
+
+  def __init__(self,fileName):
+    print("-----------------------------")
+    readPlayers = File(fileName)
+
+  def newPlayer(self, fileName):
+    print("-----------------------------")
+    addPlayer = open(fileName, "a")
+    pName = input("Please add the new player name and the points (separated by a comma): ")
+    addPlayer.write("\n")
+    addPlayer.write(pName)
+
+
+class Plays:
+
+  """read and print the file"""
+
+  def __init__(self, fileName):
+    print("-----------------------------")
+    print("Name      |       Points \n")
+    readPlays = open(fileName, "r")
+    splitFile = readPlays.split(",")
+    print(splitFile)
+
+
+
+if __name__ == "__main__":
+
+"""creates objects of the classes that inherit all the methods"""
+
+  name1 = 'Players.txt'
+  name2 = 'Players2.txt'
+  plays = 'Plays.txt'
+
+  team1 = Players(name1)
+  team1.newPlayer(name1)
+  team1 = Players(name1)
+
+  team2 = Players(name2)
+  playsDisplay = Plays(plays)
