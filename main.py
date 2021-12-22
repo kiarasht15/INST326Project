@@ -71,8 +71,13 @@ if user_choice == "yes":
         increase_skill(team2)
         
  #calculate score and show who is winner with the score       
-        score1 = cal_score()
-        score2 = cal_score()
+     for i in range(18):
+        team1_odd = odd()
+        team1_even = even()
+        team2_odd = odd()
+        team2_even = even()
+        score1 = cal_score(team1_even, team1_odd)
+        score2 = cal_score(team2_even, team2_odd)
     if score1 > score2:
         print(f"team1 is winner with score {score1}!")
     elif score1 == score2:
