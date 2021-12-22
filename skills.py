@@ -49,3 +49,6 @@ class Team:
     
     def get_throwing_skill(self):
         return self.combined_throwing_skill
+    
+    def get_skill_token(self):
+        return self.skill_token
