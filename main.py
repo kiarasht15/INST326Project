@@ -8,8 +8,6 @@ import csv
 import re
 import argparse
 
-skills.__init__()
-
 txt1 = "roster_afc_team.txt"
 txt2 = "roster_nfc_team.txt"
 
@@ -99,32 +97,3 @@ def main():
 
 
     
-def parse_args(arglist):
-    """ Parse command-line arguments.
-    Args:
-        arglist (list of str): command-line arguments.
-    Returns:
-        namespace: an object with one attribute, file, containing a string.
-    """
-    parser = argparse.ArgumentParser()
-    parser.add_argument("filename", help="file containing roster")
-    args = parser.parse_args(arglist)
-    return args
-
-       
-if __name__ == "__main__":
-    args = parse_args(sys.argv[1:])
-    main(args.filename)  
-    
-    
-def find_score(graph, start, end, path=[]):
-    score = path + [start]
-    if start == end:
-        return path
-    for node in graph[start]:
-        if node not in path:
-            newpath = find_score(graph, node, end, path)
-            if newpath:
-                return newpath
-            
-print(find_score(graph, 'd', 'c'))
