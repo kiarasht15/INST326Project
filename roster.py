@@ -95,7 +95,7 @@ def find_roster(chosen_name, team_roster):
         Raises:
             ValueError : if chosen team name is not in the team roster
         """
-            if chosen_name in team_names:
-                return team_roster[chosen_name]
-            if not chosen_name in team_roster:
-                raise ValueError(" ")
+        if chosen_name in team_names:
+            return team_roster[chosen_name]
+        if not chosen_name in team_roster:
+            raise ValueError(" ")
