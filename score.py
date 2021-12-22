@@ -5,21 +5,21 @@ import random
 def even():
     """random choose from 1 to 10 for even"""
     while check is True
-        check = false
+        check = False
         even = random.randint(1,10)
         if even % 2 == 0:
             return even
         else:
-            check = false
+            check = False
 def odd():
     """random choose from 1 to 11 for odd"""
     while check is True
-        check = false
+        check = False
         odd = random.randint(1,11)
         if odd % 2 != 0:
             return odd
         else:
-            check = false
+            check = False
 
 def compare():
     even = even()
