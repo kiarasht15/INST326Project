@@ -30,7 +30,8 @@ class Contestant:
         return {'AFC:':self.name[0], 'NFC:':self.name[1]}
         
     print(f"Which team would you like to choose?")
-retrieved_teams = Contestant(contestants).retrieve_team()
+retrieved_teams1 = Contestant(contestants).retrieve_team()
+retrieved_teams2 = Contestant(teams).retrieve_team()
 for team, name in retrieved_teams.items():
     print(team, name)
 value = input("Please choose a team from the two options above\n")
