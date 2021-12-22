@@ -1,12 +1,12 @@
-
+import random
 
 
 
 def even():
-    even = random.radint(1,3)
+    even = random.randint(1,3)
     return even
 def odd():
-    odd = random.radint(1,3)
+    odd = random.randint(1,3)
     return odd
 
 def cal_score(even, odd):
