@@ -20,6 +20,7 @@ class Team:
 
         self.combined_running_skill = running_skill
         self.combined_throwing_skill = throwing_skill
+        self.skill_token = skill_token
         self.roster = roster
     
     def increase_throwing_skill(self):
